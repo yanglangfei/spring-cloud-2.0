@@ -1,0 +1,11 @@
+server:
+  port: 8879
+spring:
+  application:
+    name: platform-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        hostname: 192.169.1.108    # 服务在注册列表显示的 instance-id

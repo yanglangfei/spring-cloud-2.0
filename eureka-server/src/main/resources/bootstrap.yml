@@ -1,0 +1,9 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8766/eureka/
+  server:
+    enable-self-preservation: false   # 关闭自我保护
+    eviction-interval-timer-in-ms: 1000  # 剔除失效服务间隔时间

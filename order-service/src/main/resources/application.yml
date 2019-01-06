@@ -1,0 +1,4 @@
+server:
+  tomcat:
+    max-threads: 10000  # tomcat 最大处理请求
+    accept-count: 10000  # tomcat 可排队的请求数
