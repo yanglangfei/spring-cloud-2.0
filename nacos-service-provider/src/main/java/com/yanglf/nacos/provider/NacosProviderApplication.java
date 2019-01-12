@@ -1,19 +1,23 @@
-package com.yanglf.platform;
+package com.yanglf.nacos.provider;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
 /**
  * @author yanglf
- * @sine 2019.01.06
+ * @sine 2019.01.12
  * @descriptipon
  * @see
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class PlatformServiceApplication {
+@EnableConfigurationProperties
+public class NacosProviderApplication {
 
     public static void main(String[] args){
-        SpringApplication.run(PlatformServiceApplication.class,args);
+        SpringApplication.run(NacosProviderApplication.class,args);
     }
 
 }

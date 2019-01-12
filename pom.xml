@@ -23,6 +23,8 @@
         <module>message-zookeeper-service</module>
         <module>platform-consul-service</module>
         <module>feign-client</module>
+        <module>nacos-service-provider</module>
+        <module>nacos-service-consumer</module>
     </modules>
 
     <dependencies>

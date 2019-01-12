@@ -1,19 +1,23 @@
-package com.yanglf.platform;
+package com.yanglf.nacos.consumer;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
 /**
  * @author yanglf
- * @sine 2019.01.06
+ * @sine 2019.01.13
  * @descriptipon
  * @see
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class PlatformServiceApplication {
+@EnableFeignClients
+public class NacosConsumerApplication {
 
     public static void main(String[] args){
-        SpringApplication.run(PlatformServiceApplication.class,args);
+        SpringApplication.run(NacosConsumerApplication.class,args);
     }
 
 }

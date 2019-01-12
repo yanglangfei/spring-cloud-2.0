@@ -1,0 +1,11 @@
+server:
+  port: 34212
+spring:
+  application:
+    name: nacos-service-consumer
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+      discovery:
+        server-addr: localhost:8848
