@@ -24,7 +24,7 @@ public class ConsumerController {
 
 
 
-    @FeignClient(value = "nacos-service-provider",path = "/user")
+    @FeignClient(value = "provider",path = "/user")
     public interface  UserFeign{
 
         @RequestMapping("/info")

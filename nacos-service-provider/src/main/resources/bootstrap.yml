@@ -1,0 +1,29 @@
+server:
+  port: 12348
+spring:
+  application:
+    name: provider
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        prefix: provider
+        file-extension: yaml
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        port: 8979   # 上报端口
+        dashboard: localhost:8080   # dashboard 端口
+
+user:
+  id: 1
+  name: 张三
+  age: 22
+  port: 0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
