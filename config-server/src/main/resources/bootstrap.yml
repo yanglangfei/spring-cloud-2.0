@@ -1,0 +1,41 @@
+server:
+  port: 48021
+
+spring:
+  application:
+    name: config-server
+  security:
+    user:
+      name: admin
+      password: admin123
+  profiles:
+    active: native
+  cloud:
+    config:
+      retry:
+        max-attempts: 3
+      server:
+        native:
+          search-locations: classpath:/config
+
+encrypt:
+  key: PL8iU@vt&0tFWijuoi%zASgsLP1rKwks
+
+
+
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8766/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+
+#logging:
+#  level:
+ #   org.springframework.cloud: DEBUG
+  #  org.springframework.boot: DEBUG

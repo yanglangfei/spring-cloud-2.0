@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"       # 允许访问的域名
+            allowedMethods:           # 允许请求的方法
+            - GET
+            - PUT
+            - POST
+            - DELETE
+
+  application:
+    name: api-gateway
+
+server:
+  port: 48000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+
+

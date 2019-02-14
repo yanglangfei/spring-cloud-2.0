@@ -1,0 +1,34 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: '{cipher}a1d30c1325f1b0cd2e4619bff2be57bc32ae0413c0ce1fee07153b60bfa3a782'
+  boot:
+    admin:
+      client:
+        username: admin
+        password: '{cipher}a1d30c1325f1b0cd2e4619bff2be57bc32ae0413c0ce1fee07153b60bfa3a782'
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${random.int}
+    health-check-url-path: /actuator/health
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://admin:admin123@localhost:8766/eureka/
+  server:
+    enable-self-preservation: false   # 关闭自我保护
+    eviction-interval-timer-in-ms: 1000  # 剔除失效服务间隔时间
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"

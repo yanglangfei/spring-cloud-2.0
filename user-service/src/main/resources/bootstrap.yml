@@ -3,27 +3,10 @@ server:
 spring:
   application:
     name: user-service
-  boot:
-    admin:
-      client:
-        username: admin
-        password: admin123
+  cloud:
+    config:
+      uri: http://localhost:48021
+      profile: dev
+      username: admin
+      password: admin123
 
-eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${random.int}
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://admin:admin123@localhost:8766/eureka/
-
-management:
-  endpoint:
-    health:
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        include: "*"
