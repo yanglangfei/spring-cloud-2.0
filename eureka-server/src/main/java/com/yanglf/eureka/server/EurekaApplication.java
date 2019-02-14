@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 /**
  * @author yanglf
  * @sine 2018.12.30
- * @descriptipon
+ * @descriptipon   注册中心 EUREKA
  * @see
  */
 @EnableEurekaServer
@@ -16,5 +16,4 @@ public class EurekaApplication {
     public static void main(String[] args) {
         SpringApplication.run(EurekaApplication.class, args);
     }
-
 }

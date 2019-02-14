@@ -3,15 +3,30 @@ server:
 spring:
   application:
     name: monitor-admin
+  security:
+    user:
+      password: admin123
+      name: admin
+  boot:
+    admin:
+      notify:
+        dingtalk:
+          enabled: true
+          webhook-token: https://oapi.dingtalk.com/robot/send?access_token=a6b85d2191ab46483554ed551d774378e9ab2b9118e1efdd71f02d0f4ea372a2
+
 eureka:
   instance:
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
+    health-check-url-path: /actuator/health
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8766/eureka/
+      defaultZone: http://admin:admin123@localhost:8766/eureka/
+
 management:
   endpoint:
     health:

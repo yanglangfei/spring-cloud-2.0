@@ -1,38 +1,32 @@
 package com.yanglf.user.controller;
 
+import com.yanglf.user.model.TbAccount;
 import com.yanglf.user.model.TbUser;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
  * @author yanglf
- * @sine 2018.12.30
- * @descriptipon
- * @see
- */
+ * @description
+ * @since 2019/2/14
+ **/
 @RestController
-@RequestMapping("/user")
-public class UserController {
-
-    @Value("${server.port}")
-    private String port;
+@RequestMapping("/account")
+public class AccountController {
 
     @RequestMapping(value = "/info",method = RequestMethod.GET)
-    public TbUser info(Long id){
+    public TbAccount info(Long userId){
         Date currentTime=new Date();
-        return TbUser.builder()
-                .id(id)
-                .userName("admin")
-                .password("111111")
-                .age(22)
-                .address("陕西省西安市:"+port)
+        return TbAccount.builder()
+                .id(1L)
+                .userId(userId)
+                .amount(BigDecimal.valueOf(100))
                 .createTime(currentTime)
                 .modifyTime(currentTime).build();
 
     }
-
 }

@@ -1,9 +1,31 @@
+server:
+  port: 8766
+spring:
+  application:
+    name: eureka-server
+  security:
+    user:
+      name: admin
+      password: admin123
+  boot:
+    admin:
+      client:
+        username: admin
+        password: admin123
+
 eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    health-check-url-path: /actuator/health
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+
   client:
     fetch-registry: false
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8766/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8766/eureka/
   server:
     enable-self-preservation: false   # 关闭自我保护
     eviction-interval-timer-in-ms: 1000  # 剔除失效服务间隔时间

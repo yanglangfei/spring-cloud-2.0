@@ -1,7 +1,9 @@
 package com.yanglf.order.controller;
 
+import com.yanglf.feign.AccountClient;
 import com.yanglf.feign.UserClient;
 import com.yanglf.order.model.vo.OrderVo;
+import com.yanglf.user.model.TbAccount;
 import com.yanglf.user.model.TbUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,13 +25,19 @@ public class OrderController {
     @Autowired
     private UserClient userClient;
 
+    @Autowired
+    private AccountClient accountClient;
+
     @RequestMapping(value = "/info",method = RequestMethod.GET)
-    public OrderVo info(int id){
-        TbUser tbUser = userClient.info(id);
+    public OrderVo info(Long userId){
+        TbAccount tbAccount = accountClient.info(userId);
+        TbUser tbUser = userClient.info(userId);
         return OrderVo.builder()
-                .id(id)
+                .id(1L)
+                .amount(tbAccount.getAmount())
                 .orderCode(UUID.randomUUID().toString().replace("-",""))
                 .status(1)
+                .userId(userId)
                 .userName(tbUser.getAddress())
                 .createTime(new Date())
                 .build();

@@ -10,7 +10,7 @@ import com.yanglf.user.model.TbUser;
  */
 public class UserClientFallback implements UserClient {
     @Override
-    public TbUser info(int id) {
+    public TbUser info(Long id) {
         return TbUser.builder()
                 .userName("yanglf")
                 .build();

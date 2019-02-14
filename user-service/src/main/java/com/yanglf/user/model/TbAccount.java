@@ -3,22 +3,20 @@ package com.yanglf.user.model;
 import lombok.Builder;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
  * @author yanglf
- * @sine 2018.12.30
- * @descriptipon
- * @see
- */
+ * @description
+ * @since 2019/2/14
+ **/
 @Data
 @Builder
-public class TbUser {
+public class TbAccount {
     private Long id;
-    private String userName;
-    private String password;
-    private int age;
-    private String address;
+    private Long userId;
+    private BigDecimal amount;
     private Date createTime;
     private Date modifyTime;
 }

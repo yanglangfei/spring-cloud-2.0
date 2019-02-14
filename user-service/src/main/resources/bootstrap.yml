@@ -3,15 +3,21 @@ server:
 spring:
   application:
     name: user-service
+  boot:
+    admin:
+      client:
+        username: admin
+        password: admin123
+
 eureka:
   instance:
     prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8766/eureka/
+      defaultZone: http://admin:admin123@localhost:8766/eureka/
 
 management:
   endpoint:

@@ -3,6 +3,7 @@ package com.yanglf.order.model.vo;
 import lombok.Builder;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -14,9 +15,11 @@ import java.util.Date;
 @Data
 @Builder
 public class OrderVo {
-    private int id;
+    private Long id;
     private String orderCode;
     private int status;
     private String userName;
     private Date createTime;
+    private BigDecimal amount;
+    private Long userId;
 }
