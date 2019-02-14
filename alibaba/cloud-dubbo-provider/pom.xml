@@ -17,10 +17,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>cn.springcloud.dubbo</groupId>
-            <artifactId>spring-cloud-dubbo-starter</artifactId>
-        </dependency>
 
 
     </dependencies>
