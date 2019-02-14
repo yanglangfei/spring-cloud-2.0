@@ -16,6 +16,7 @@ spring:
         port: 8979   # 上报端口
         dashboard: localhost:8080   # dashboard 端口
 
+
 user:
   id: 1
   name: 张三

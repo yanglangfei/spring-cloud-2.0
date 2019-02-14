@@ -18,8 +18,8 @@ import java.util.Date;
 @RequestMapping("/user")
 public class UserController {
 
-    @Value("${server.port}")
-    private String port;
+    @Value("${eureka.instance.instance-id}")
+    private String instanceId;
 
     @RequestMapping(value = "/info",method = RequestMethod.GET)
     public TbUser info(Long id){
@@ -29,7 +29,7 @@ public class UserController {
                 .userName("admin")
                 .password("111111")
                 .age(22)
-                .address("陕西省西安市:"+port)
+                .address("陕西省西安市:"+instanceId)
                 .createTime(currentTime)
                 .modifyTime(currentTime).build();
 

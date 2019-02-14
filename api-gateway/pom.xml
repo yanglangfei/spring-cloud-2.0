@@ -8,18 +8,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <description>spring-cloud-alibaba</description>
-    <artifactId>alibaba</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>nacos-service-consumer</module>
-        <module>nacos-service-provider</module>
-        <module>nacos-dubbo-consumer</module>
-        <module>nacos-dubbo-provider</module>
-        <module>cloud-dubbo-provider</module>
-        <module>cloud-dubbo-consumer</module>
-    </modules>
+
+    <artifactId>api-gateway</artifactId>
 
 
 </project>

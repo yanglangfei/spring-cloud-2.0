@@ -23,6 +23,8 @@
         <module>platform-consul-service</module>
         <module>feign-client</module>
         <module>alibaba</module>
+        <module>api-gateway</module>
+        <module>api-zuul</module>
     </modules>
 
     <dependencies>
