@@ -9,7 +9,16 @@ spring:
     name: order-service
   cloud:
     config:
-      uri: http://localhost:48021
-      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+      #uri: http://localhost:48021
+      #profile: dev
       username: admin
       password: admin123
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://admin:admin123@localhost:8766/eureka/
