@@ -16,6 +16,12 @@ spring:
       #profile: dev
       username: admin
       password: admin123
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    mode: LEGACYHTML5   #LEGACYHTML5需要搭配一个额外的库NekoHTML 可以使thymeleaf对HTML的语法要求不是很严格
+
 eureka:
   client:
     fetch-registry: true
