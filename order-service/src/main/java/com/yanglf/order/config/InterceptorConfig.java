@@ -51,14 +51,16 @@ public class InterceptorConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //   自定义资源映射目录
+        registry.addResourceHandler("/doc/**").addResourceLocations("classpath:/doc/");
         registry.addResourceHandler("/img/**").addResourceLocations("classpath:/image/");
-        //registry.addResourceHandler("/file/image/**").addResourceLocations("file:D:/image/");
+        registry.addResourceHandler("/file/img/**").addResourceLocations("file:D:/image/");
     }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         // 配置视图跳转控制器
-        registry.addRedirectViewController("/html","/static/index.html");
-        registry.addRedirectViewController("/pdf","/static/index.pdf");
+        registry.addRedirectViewController("/html","/doc/index.html");
+        registry.addRedirectViewController("/order","/order/info?userId=10");
+
     }
 }
