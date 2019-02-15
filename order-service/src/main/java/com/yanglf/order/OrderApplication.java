@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @descriptipon
  * @see
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.yanglf")
 @EnableFeignClients("com.yanglf")
 public class OrderApplication {
 

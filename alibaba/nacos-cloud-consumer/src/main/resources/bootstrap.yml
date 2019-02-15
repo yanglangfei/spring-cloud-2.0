@@ -14,10 +14,10 @@ spring:
         port: 8976   # 上报端口
         dashboard: localhost:8080   # dashboard 端口
 
+
 feign:
   sentinel:
-    enabled: true
-
+    enabled: true   #将feign里的hystrix替换成sentinel
 
 management:
   endpoints:

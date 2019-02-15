@@ -18,9 +18,6 @@ import java.util.Date;
 @RequestMapping("/user")
 public class UserController {
 
-    @Value("${eureka.instance.instance-id}")
-    private String instanceId;
-
     @RequestMapping(value = "/info",method = RequestMethod.GET)
     public TbUser info(Long id){
         Date currentTime=new Date();
@@ -29,7 +26,7 @@ public class UserController {
                 .userName("admin")
                 .password("111111")
                 .age(22)
-                .address("陕西省西安市:"+instanceId)
+                .address("陕西省西安市:")
                 .createTime(currentTime)
                 .modifyTime(currentTime).build();
 

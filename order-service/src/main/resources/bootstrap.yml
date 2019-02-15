@@ -22,3 +22,6 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://admin:admin123@localhost:8766/eureka/
+feign:
+  hystrix:
+    enabled: true

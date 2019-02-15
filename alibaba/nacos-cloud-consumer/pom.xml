@@ -32,7 +32,7 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <artifactId>spring-cloud-alibaba-sentinel</artifactId>
             <version>0.2.1.RELEASE</version>
         </dependency>
 

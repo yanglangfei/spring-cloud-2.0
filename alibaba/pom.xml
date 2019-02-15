@@ -13,8 +13,8 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>nacos-service-consumer</module>
-        <module>nacos-service-provider</module>
+        <module>nacos-cloud-consumer</module>
+        <module>nacos-cloud-provider</module>
         <module>nacos-dubbo-consumer</module>
         <module>nacos-dubbo-provider</module>
         <module>cloud-dubbo-provider</module>

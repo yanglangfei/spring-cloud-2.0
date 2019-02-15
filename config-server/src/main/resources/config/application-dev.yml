@@ -32,3 +32,28 @@ management:
     web:
       exposure:
         include: "*"
+
+# 开启 feign 的 hystrix 功能
+feign:
+  hystrix:
+    enabled: true
+
+# ribbon 的超时时间（<）hystrix的超时时间
+#MaxAutoRetries+MaxAutoRetriesNextServer+(MaxAutoRetries *MaxAutoRetriesNextServer) =重试次数
+#重试期间，时间超过了hystrix的超时时间，便会立即执行熔断，fallback
+# (1 + MaxAutoRetries + MaxAutoRetriesNextServer) * ReadTimeout=hystrix 超时时间
+#当ribbon超时后且hystrix没有超时，便会采取重试机制。当OkToRetryOnAllOperations设置为false时，只会对get请求进行重试
+
+# 设置 hystrix 的超时时间,超过时间未响应进入fallback
+#ribbon:
+ # ConnectTimeout: 30000     #ribbon 负载均衡连接超时时间
+ # ReadTimeout: 60000       #ribbon 负载均衡读取超时时间
+  #MaxAutoRetries: 1   #同一台实例最大重试次数,不包括首次调用
+  #MaxAutoRetriesNextServer: 1  #重试负载均衡其他的实例最大重试次数,不包括首次调用
+  #OkToRetryOnAllOperations: false #否所有操作都重试
+ # command:
+ #   default:
+  #    execution:
+   #     isolation:
+    #      thread:
+     #       timeoutInMilliseconds: 5000

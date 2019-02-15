@@ -1,5 +1,4 @@
 package com.yanglf.order.controller;
-
 import com.yanglf.feign.AccountClient;
 import com.yanglf.feign.UserClient;
 import com.yanglf.order.model.vo.OrderVo;
@@ -38,7 +37,7 @@ public class OrderController {
                 .orderCode(UUID.randomUUID().toString().replace("-",""))
                 .status(1)
                 .userId(userId)
-                .userName(tbUser.getAddress())
+                .userName(tbUser.getUserName())
                 .createTime(new Date())
                 .build();
     }
