@@ -10,3 +10,9 @@ spring:
       username: admin
       password: admin123
 
+
+
+####  Moss
+info.groupId: @project.groupId@
+info.artifactId: @project.artifactId@
+info.version: @project.version@
