@@ -16,3 +16,4 @@ spring:
 info.groupId: @project.groupId@
 info.artifactId: @project.artifactId@
 info.version: @project.version@
+

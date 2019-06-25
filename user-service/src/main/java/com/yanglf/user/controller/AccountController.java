@@ -2,6 +2,7 @@ package com.yanglf.user.controller;
 
 import com.yanglf.user.model.TbAccount;
 import com.yanglf.user.model.TbUser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;

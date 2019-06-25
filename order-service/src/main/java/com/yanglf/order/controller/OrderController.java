@@ -5,9 +5,12 @@ import com.yanglf.order.model.vo.OrderVo;
 import com.yanglf.user.model.TbAccount;
 import com.yanglf.user.model.TbUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
 
@@ -39,6 +42,16 @@ public class OrderController {
                 .userId(userId)
                 .userName(tbUser.getUserName())
                 .createTime(new Date())
+                .build();
+    }
+
+
+    @RequestMapping(value = "/findById/{id}",method = RequestMethod.GET)
+    public OrderVo findById(@PathVariable(value = "id") Long id){
+        return OrderVo.builder().createTime(new Date()).orderCode(UUID.randomUUID().toString())
+                .status(2)
+                .id(id)
+                .amount(BigDecimal.valueOf(20))
                 .build();
     }
 
